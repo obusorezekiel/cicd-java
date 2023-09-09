@@ -10,7 +10,7 @@ pipeline {
         
         stage("Git Checkout"){
             steps{
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/writetoritika/Petclinic.git'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/obusorezekiel/cicd-java.git'
             }
         }
         
