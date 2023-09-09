@@ -54,6 +54,19 @@ pipeline {
             }
         }
 
+            stage("Docker Build & Push"){
+            steps{
+                script{
+                   withDockerRegistry(credentialsId: 'docker-creds', toolName: 'docker') {
+                        
+                        sh "docker build -t obusorezekiel/myclinicapp ."
+                        sh "docker push obusorezekiel/myclinicapp:latest "
+                    
+                    }
+                }
+            }
+        }
+
 
      }
 }
